@@ -16,8 +16,8 @@ This Technical Document serves as a guide for individuals to learn more about Ar
 The version of the code being used in the analysis is the modified version. The code is broken down into mini sections and thoroughly analyzed with key concepts that are commonly used AI. We placed detailed descriptions of these key concepts prior to the analysis as a reference for readers. Finally, the conclusion proves an efficient AI is achievable and an overview of this project and our work.
 
 ## SmartPong Roadmap
-<center>
+
 ![The Entire SmartPong Process](images/smartpong_roadmap.png)
-</center>
+
 
 
