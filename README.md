@@ -26,7 +26,5 @@ The version of the code being used in the analysis is the modified version. The 
 <p align="center">
   <img src="images/smartpong_roadmap.png">
 </p>
-![The Entire SmartPong Process](images/smartpong_roadmap.png)
-
 
 
