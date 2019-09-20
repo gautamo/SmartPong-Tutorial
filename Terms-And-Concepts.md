@@ -1,4 +1,6 @@
-## Terms and Concepts
+# Terms and Concepts
+Here are the technical terms you should know to understand the SmartPong program!
+
 ### Machine Learning
 Machine learning is divided into three categories. Supervised learning, Unsupervised Learning, and Reinforcement Learning. In the supervised learning algorithm, we feed the data as the input to our model as well as the expected output, then we let our model come up with the fastest and the most efficient algorithm to get the desired output. In the unsupervised learning algorithm, we feed the data to our model as the input and let the algorithm to find a relationship between data and categorizes them. 
 
