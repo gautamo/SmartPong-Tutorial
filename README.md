@@ -17,6 +17,6 @@ The version of the code being used in the analysis is the modified version. The 
 
 ## SmartPong Roadmap
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![The Entire SmartPong Process](images/smartpong_roadmap.png)
 
 
