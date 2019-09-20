@@ -1,4 +1,6 @@
-## Installation and Running
+# Installation and Running
+Here is how to run the SmartPong program on your local machine!
+
 Video Guide: https://www.youtube.com/playlist?list=PLwvt34ierZxIesNGya03gq5Xh48IQfj0m
 ### Windows 
 1.	Install Python 3.7 from https://www.python.org/, make sure to add it to PATH.
