@@ -3,6 +3,12 @@ Train an AI to play Pong using reinforcement learning - Tutorial and Documentati
 ## Co-Authors
 Gautam Banuru, Pranav Banuru, Ashwin Char, David Llanio, Hirad Peyvandi, Ishika Majumder
 
+## Contents
+1. [Installation and Running](Installation-And-Running.md)
+2. [Terms and Concepts](Terms-And-Concepts.md)
+3. [Analysis of SmartPong Code](Analysis-Of-SmartPong-Code.md)
+4. [References](References.md)
+
 ## Introduction
 SmartPong is a program created by Andrej Karpathy. This program implements artificial intelligence to make it play itself and win. SmartPong outputs lines of code to see the efficiency of the AI as the number of episodes, or games, increase. 
 Through this project, we learn the foundations of Artificial Intelligence by analyzing this operated program. In this project, we analyzed the Atari game called Pong, and through the reverse engineering technique, we learned how we can train an AI model to master the game pong through the deep neural network using reinforcement learning algorithm.
