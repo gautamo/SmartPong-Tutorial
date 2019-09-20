@@ -86,7 +86,7 @@ Because the Smartpong program is using policy gradients, the different data we g
 
 Then the rmsprop cache is created which will be keeping track of the per-parameter sum of squared gradients. This sum comprises of previous adjustments done to the weights of the neural network, and because of the structure of the on.
 
-RMSprop Formula:
+#### RMSprop Formula:
 The RMSProp algorithm is considered “leaky" because it “leaks" the previous estimates to the current calculation with the decay_rate set at 0.99. This means 99% is the old value stored in rmsprop_cache and 1% is the new value received from the square of the gradient. This ensures the model builds off of previous experience when updating weights. 
 
 ### Lines 27-28
@@ -98,10 +98,10 @@ def sigmoid(x):
 
 These lines define the sigmoid function, which is a function that is used to “squash” any inputs into an interval of (0,1). The function is simply f(x)=1/(1+e^(-x)). SmartPong uses this function in order to generate log probabilities of moving up from values given by the neural network. This occurs in the “policy_forward” function, which also utilizes the ReLU nonlinearity to return the hidden states and probabilities. 
 
-Sigmoid benefits:
+#### Sigmoid benefits:
 SmartPong uses the sigmoid function due to its ability to always return numbers between 0 and 1, no matter its input. Along with this, the general S shape of this function creates a general steepness that occurs in the middle of the function which allows most inputs to tend to lean towards either 0 or 1, making it binary. The sigmoid function is a nonlinearity, making it a very useful and popular activation function. Compared to the step function and general linear function, sigmoid will always have a set range of (0,1) which are the 2 choices the agent has, moving UP or Down. Sigmoid is also monotonic, which activation function must be.
 
-Potential shortfalls:
+#### Potential shortfalls:
 	Unfortunately, sigmoid is not a perfect activation function. One potential shortfall of using sigmoid is the possibility of a vanishing gradient. As inputs become infinitely large or small, different inputs will result in largely the same output. Although this may not be terribly destructive to SmartPong, neural networks with a larger number of layers can experience these smaller gradients, which make training an agent extremely inefficient.
    
 The graph shown is the sigmoid function, which is one of the activation functions used in SmartPong.
@@ -136,7 +136,7 @@ The last action I[I != 0] = 1 will set every value in the image not equal to 0 t
 
 Finally, we turn the 2D image array into a 1D vector of floats (decimal values which in our case will be 0.0 or 1.0) with I.astype(np.float).ravel() because a vector is the preferred way our neural network processes information. Floats are used because these values will interact with the weights in our network which are also floats. This returns a single vector with 6400 values. 
 
-Visualizations of each step in prepro(I).
+#### Visualizations of each step in prepro(I):
 
 ### Lines 39-47
 ```python
@@ -188,7 +188,7 @@ To get the initial output value at a node we multiply the weights connected to t
 
 Our input image x is an 80x80 2D numpy array flattened to shape (6400,1) from preprocessing. To get the output value at the hidden layer we take the dot product between the first layer weights of shape (200,6400) and image x. For 2-D vectors, it is the equivalent to matrix multiplication. A matrix multiplication would sum the weight multiplied by the input for all neuron connections from the last layer creating vector h. This returns a vector of shape (200,1) because for matrix multiplication shape AxB * shape BxC = shape AxC. Similarly, shape 200x6400 * shape 6400x1 = shape 200x1.We then pass all values through the ReLU nonlinearity activation function to get the final out value for each node in the hidden layer. Any summed value less than zero becomes zero. Mathematically this is y = max(0, x). Notice that the first layer weights are actually of shape (6400,1). Backpropagation will update these weights to identify balls and paddles as patterns of 80x80 images like the ones shown below.
 
-model[‘W1’] weights visualized
+#### model[‘W1’] weights visualized:
 
 Now we take the output values from the hidden layer and repeat the process. Take the dot product of h and the second hidden layer weights. We pass these summed values through the sigmoid activation function acting on the output layer to produce the final probability of moving up as variable p. We then return p and h (which is the output values from the hidden layer) called the hidden state. We will use this hidden state later for backpropagation. 
 
@@ -290,17 +290,21 @@ Next, the 1 or 0 that was assigned to the y variable is subtracted by the action
 
 Now that we know the action our AI should take we need to input this action into the Gym Pong environment. Remember action = 2 moves the paddle up and action = 3 moves the paddle down. env.step(action) inputs the action to be taken into the Gym Pong environment and env.step applies the action to create the next frame in the simulation as well as the other return values. We are given 4 return values from env.step(action).
 
-observation (object): an environment-specific object representing your observation of the environment. (ie. the current frame of the pong game)
+#### observation (object): 
+an environment-specific object representing your observation of the environment. (ie. the current frame of the pong game)
 
-reward (float): amount of reward achieved by the previous action. The scale varies between environments, but the goal is always to increase your total reward. (ie. -1.0, 0, or 1.0)
+#### reward (float): 
+amount of reward achieved by the previous action. The scale varies between environments, but the goal is always to increase your total reward. (ie. -1.0, 0, or 1.0)
 
-done (boolean): whether it’s time to reset the environment again. Most (but not all) tasks are divided up into well-defined episodes, and done being True indicates the episode has terminated. (ie. True or False)
+#### done (boolean): 
+whether it’s time to reset the environment again. Most (but not all) tasks are divided up into well-defined episodes, and done being True indicates the episode has terminated. (ie. True or False)
 
-info (dict): diagnostic information useful for debugging. It can sometimes be useful for learning (for example, it might contain the raw probabilities behind the environment’s last state change). Official evaluations of your agent are not allowed to use this for learning.
+#### info (dict): 
+diagnostic information useful for debugging. It can sometimes be useful for learning (for example, it might contain the raw probabilities behind the environment’s last state change). Official evaluations of your agent are not allowed to use this for learning.
 
 Finally, the reward is added to the reward sum. We also append the reward into drs because we will later use drs to determine the string of events that lead to a +1 or -1 reward.
 
-Observation Action Cycle:
+#### Observation Action Cycle:
 This process highlights the relationship between our system and the environment. The system is given an observation from the environment. Using that observation, the system is able to generate some type of action. In the case of SmartPong, the observation is fed into the “policy_forward” function and produces a probability that will determine an action. This action will then be executed in the environment(moving UP or DOWN). Following this action, the environment produces and returns another observation, which continues this cycle of observations and actions. 
 
 ### Lines 95-103
