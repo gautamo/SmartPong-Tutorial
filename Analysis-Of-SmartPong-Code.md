@@ -1,3 +1,6 @@
+# Analysis of SmartPong Code
+Here is a line by line explanation of the SmartPong program!
+
 ### Lines 2-4
 ```python
 import numpy as np
