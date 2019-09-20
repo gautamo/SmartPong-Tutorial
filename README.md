@@ -8,7 +8,8 @@ Supervisor: Dr. Rob Williams
 1. [Installation and Running](Installation-And-Running.md)
 2. [Terms and Concepts](Terms-And-Concepts.md)
 3. [Analysis of SmartPong Code](Analysis-Of-SmartPong-Code.md)
-4. [References](References.md)
+4. [Actual Code](pg-pong.py)
+5. [References](References.md)
 
 ## Introduction
 SmartPong is a program created by Andrej Karpathy. This program implements artificial intelligence to make it play itself and win. SmartPong outputs lines of code to see the efficiency of the AI as the number of episodes, or games, increase. 
