@@ -3,6 +3,8 @@ Train an AI to play Pong using reinforcement learning - Tutorial and Documentati
 ## Co-Authors
 Gautam Banuru, Pranav Banuru, Ashwin Char, David Llanio, Hirad Peyvandi, Ishika Majumder
 
+Supervisor: Dr. Rob Williams
+
 ## Contents
 1. [Installation and Running](Installation-And-Running.md)
 2. [Terms and Concepts](Terms-And-Concepts.md)
