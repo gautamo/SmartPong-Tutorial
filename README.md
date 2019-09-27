@@ -12,7 +12,7 @@ Supervisor: Dr. Rob Williams
 5. [References](References.md)
 
 ## Introduction
-SmartPong is a program created by Andrej Karpathy. This program implements artificial intelligence to make it play itself and win. SmartPong outputs lines of code to see the efficiency of the AI as the number of episodes, or games, increase. 
+SmartPong is a program created by Andrej Karpathy. This program implements reinfocement learning to train an AI to win at the game Pong. SmartPong outputs lines of code to see the efficiency of the AI as the number of episodes, or games, increase. 
 Through this project, we learn the foundations of Artificial Intelligence by analyzing this operated program. In this project, we analyzed the Atari game called Pong, and through the reverse engineering technique, we learned how we can train an AI model to master the game pong through the deep neural network using reinforcement learning algorithm.
 Figuring out how to run the program and what software and libraries were required to overcome the errors was one of the early challenges we faced. This program and many other AI programs are written in python programming language due to its simplicity. Therefore, the first application we installed was the latest version of python which is python 3.7. When you open the program, you see all these errors at the very beginning of the code where it’s asking you to install the numpy, gym, and gym(Atari) library. 
 
