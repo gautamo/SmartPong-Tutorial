@@ -1,6 +1,6 @@
 # SmartPong: Train an AI to play Pong using reinforcement learning - Tutorial and Documentation Series
 ## Co-Authors
-Gautam Banuru, Pranav Banuru, Ashwin Char, David Llanio, Hirad Peyvandi, Ishika Majumder
+Gautam, Pranav, Ashwin, David, Hirad, Ishika
 
 Supervisor: Dr. Rob Williams
 
